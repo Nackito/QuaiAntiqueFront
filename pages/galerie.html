@@ -25,10 +25,15 @@
         />
         <p class="titre-image">Titre</p>
         <div class="action-image-buttons">
-          <button class="btn btn-outline-light">
+          <button
+            class="btn btn-outline-light"
+            data-bs-toggle="modal"
+            data-bs-target="#EditionPhotoModal"
+          >
             <i class="bi bi-pencil-square"></i>
           </button>
-          <button class="btn btn-outline-light">
+          <button class="btn btn-outline-light" data-bs-toggle="modal"
+          data-bs-target="#DeletePhotoModal">
             <i class="bi bi-trash"></i>
           </button>
         </div>
@@ -43,10 +48,15 @@
         />
         <p class="titre-image">Titre</p>
         <div class="action-image-buttons">
-          <button class="btn btn-outline-light">
+          <button
+            class="btn btn-outline-light"
+            data-bs-toggle="modal"
+            data-bs-target="#EditionPhotoModal"
+          >
             <i class="bi bi-pencil-square"></i>
           </button>
-          <button class="btn btn-outline-light">
+          <button class="btn btn-outline-light" data-bs-toggle="modal"
+          data-bs-target="#DeletePhotoModal">
             <i class="bi bi-trash"></i>
           </button>
         </div>
@@ -61,10 +71,15 @@
         />
         <p class="titre-image">Titre</p>
         <div class="action-image-buttons">
-          <button class="btn btn-outline-light">
+          <button
+            class="btn btn-outline-light"
+            data-bs-toggle="modal"
+            data-bs-target="#EditionPhotoModal"
+          >
             <i class="bi bi-pencil-square"></i>
           </button>
-          <button class="btn btn-outline-light">
+          <button class="btn btn-outline-light" data-bs-toggle="modal"
+          data-bs-target="#DeletePhotoModal">
             <i class="bi bi-trash"></i>
           </button>
         </div>
@@ -79,10 +94,15 @@
         />
         <p class="titre-image">Titre</p>
         <div class="action-image-buttons">
-          <button class="btn btn-outline-light">
+          <button
+            class="btn btn-outline-light"
+            data-bs-toggle="modal"
+            data-bs-target="#EditionPhotoModal"
+          >
             <i class="bi bi-pencil-square"></i>
           </button>
-          <button class="btn btn-outline-light">
+          <button class="btn btn-outline-light" data-bs-toggle="modal"
+          data-bs-target="#DeletePhotoModal">
             <i class="bi bi-trash"></i>
           </button>
         </div>
@@ -97,10 +117,15 @@
         />
         <p class="titre-image">Titre</p>
         <div class="action-image-buttons">
-          <button class="btn btn-outline-light">
+          <button
+            class="btn btn-outline-light"
+            data-bs-toggle="modal"
+            data-bs-target="#EditionPhotoModal"
+          >
             <i class="bi bi-pencil-square"></i>
           </button>
-          <button class="btn btn-outline-light">
+          <button class="btn btn-outline-light" data-bs-toggle="modal"
+          data-bs-target="#DeletePhotoModal">
             <i class="bi bi-trash"></i>
           </button>
         </div>
@@ -115,10 +140,15 @@
         />
         <p class="titre-image">Titre</p>
         <div class="action-image-buttons">
-          <button class="btn btn-outline-light">
+          <button
+            class="btn btn-outline-light"
+            data-bs-toggle="modal"
+            data-bs-target="#EditionPhotoModal"
+          >
             <i class="bi bi-pencil-square"></i>
           </button>
-          <button class="btn btn-outline-light">
+          <button class="btn btn-outline-light" data-bs-toggle="modal"
+          data-bs-target="#DeletePhotoModal">
             <i class="bi bi-trash"></i>
           </button>
         </div>
@@ -130,7 +160,7 @@
   </div>
 </div>
 
-<!-- Modal -->
+<!-- Modal edition-->
 <div
   class="modal fade"
   id="EditionPhotoModal"
@@ -151,12 +181,75 @@
           aria-label="Close"
         ></button>
       </div>
-      <div class="modal-body">...</div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-          Close
-        </button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="NamePhotoInput" class="form-label text-primary"
+              >Titre de la photo</label
+            >
+            <input
+              type="email"
+              class="form-control"
+              id="NamePhotoInput"
+              placeholder="Lazagnes à la viande"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="ImageInput" class="form-label text-primary"
+              >Image</label
+            >
+            <input type="file" class="form-control" id="ImageInput" />
+          </div>
+          <div class="text-center">
+            <button type="button" class="btn btn-primary">Enregistrer</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Delete-->
+<div
+  class="modal fade"
+  id="DeletePhotoModal"
+  tabindex="-1"
+  aria-labelledby="DeletePhotoModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="DeletePhotoModalLabel">
+          Etes-vous sur de vouloir supprimer cette photo ?
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <p>Titre</p>
+            <img
+              src="../images/middle-eastern-food-6615971_1280.jpg"
+              alt=""
+              class="rounded w-100"
+            />
+          </div>
+          <div class="text-center">
+            <button type="button" class="btn btn-danger">Supprimer</button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Annuler
+          </div>
+        </form>
       </div>
     </div>
   </div>
