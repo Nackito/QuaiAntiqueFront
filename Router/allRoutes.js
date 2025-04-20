@@ -4,13 +4,14 @@ import Route from "./Route.js";
 export const allRoutes = [
   new Route("/", "Accueil", "/pages/home.html"),
   new Route("/galerie", "Galerie", "/pages/galerie.html"),
-  new Route("404", "Page introuvable", "/pages/404.html"),
-  new Route("contact", "Contact", "/pages/contact.html"),
-  new Route("about", "À propos", "/pages/about.html"),
-  new Route("blog", "Blog", "/pages/blog.html"),
-  new Route("services", "Services", "/pages/services.html"),
-  new Route("portfolio", "Portfolio", "/pages/portfolio.html"),
-  new Route("team", "Équipe", "/pages/team.html"),
+  new Route("/signin", "Connexion", "/pages/auth/signin.html"),
+  new Route("/signup", "Inscription", "/pages/auth/signup.html"),
+  new Route("/account", "Mon compte", "/pages/auth/account.html"),
+  new Route(
+    "/editPassword",
+    "Modifier le mot de passe",
+    "/pages/auth/editPassword.html"
+  ),
 ];
 
 // Le titre s'affiche comme ceci : Route.title - websiteName
