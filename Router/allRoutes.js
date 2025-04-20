@@ -12,6 +12,11 @@ export const allRoutes = [
     "Modifier le mot de passe",
     "/pages/auth/editPassword.html"
   ),
+  new Route(
+    "/allReservations",
+    "Vos réservations",
+    "/pages/reservations/allResa.html"
+  ),
 ];
 
 // Le titre s'affiche comme ceci : Route.title - websiteName

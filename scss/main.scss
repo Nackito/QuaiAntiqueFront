@@ -86,3 +86,11 @@ p {
     transition: all 0.3s;
   }
 }
+
+.allreservations {
+  a {
+    display: block;
+    color: $black;
+    padding: 10px;
+  }
+}
