@@ -6,12 +6,15 @@ const inputEmail = document.getElementById("EmailInput");
 const inputPassword = document.getElementById("PasswordInput");
 const inputPasswordConfirm = document.getElementById("ValidatePasswordInput");
 const btnValidation = document.getElementById("btn-validation-inscription");
+const formInscription = document.getElementById("formulaireInscription");
 
 inputNom.addEventListener("keyup", validateForm);
 inputPrenom.addEventListener("keyup", validateForm);
 inputEmail.addEventListener("keyup", validateForm);
 inputPassword.addEventListener("keyup", validateForm);
 inputPasswordConfirm.addEventListener("keyup", validateForm);
+
+btnValidation.addEventListener("click", inscrireUtilisateur);
 
 function validateForm() {
   const nomOk = validateRequired(inputNom);
@@ -83,4 +86,39 @@ function validateRequired(input) {
     input.classList.add("is-invalid");
     return false;
   }
+}
+
+function inscrireUtilisateur() {
+  // Créer un nouvel objet FormData à partir du formulaire contenu dans la variable "formInscription"
+  let dataform = new FormData(formInscription);
+
+  // Crée un nouvel objet Headers pour définir les en-têtes de la requête HTTP
+  let myHeaders = new Headers();
+  // Ajoute l'en-tête "Content-Type" avec la valeur "application/json"
+  myHeaders.append("Content-Type", "application/json");
+
+  // Convertit les données du formulaire en une chaîne JSON
+  let raw = JSON.stringify({
+    firstName: dataform.get("Prenom"),
+    lastName: dataform.get("Nom"),
+    email: dataform.get("Email"),
+    password: dataform.get("Mdp"),
+  });
+
+  // Configure les options de la requête HTTP
+  let requestOptions = {
+    // Méthode de la requête : "POST" pour envoyer des données au serveur
+    method: "POST",
+    // Définit les en-têtes de la requête en utilisant l'objet Headers créé précédemment
+    headers: myHeaders,
+    // Corps de la requête : les données JSON converties en chaîne
+    body: raw,
+    // Redirection à suivre en cas de besoin ("follow" suit automatiquement les redirections)
+    redirect: "follow",
+  };
+
+  fetch("http://127.0.0.1:8000/api/registration", requestOptions)
+    .then((response) => response.json())
+    .then((result) => console.log(result))
+    .catch((error) => console.error(error));
 }
