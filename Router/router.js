@@ -25,6 +25,10 @@ const getRouteByUrl = (url) => {
 
 // Fonction pour charger le contenu de la page
 const LoadContentPage = async () => {
+  // Affiche le loader
+  const loader = document.getElementById("loader");
+  if (loader) loader.style.display = "flex";
+
   const path = window.location.pathname;
 
   // Récupération de l'URL actuelle
@@ -78,6 +82,9 @@ const LoadContentPage = async () => {
 
   // Afficher et masquer les éléments en fonction du rôle de l'utilisateur
   showAndHideElementForRoles();
+
+  // Masque le loader après le chargement du contenu
+  if (loader) loader.style.display = "none";
 };
 
 // Fonction pour gérer les événements de routage (clic sur les liens)
