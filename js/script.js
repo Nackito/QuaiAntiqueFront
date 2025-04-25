@@ -9,6 +9,13 @@ function getRole() {
   return getCookie(roleCookieName);
 }
 
+// Fonction contre les injections XSS
+function sanitizeHtml(html) {
+  const tempHtml = document.createElement("div");
+  tempHtml.textContent = html;
+  return tempHtml.innerHTML;
+}
+
 function signout() {
   // Effacer le cookie
   eraseCookie(tokenCookieName);

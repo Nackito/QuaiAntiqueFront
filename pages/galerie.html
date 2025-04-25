@@ -15,151 +15,9 @@
       Ajouter une photo
     </button>
   </div>
-  <div class="row row-cols-2 row-cols-lg-3">
-    <div class="col p-3">
-      <div class="image-card text-white">
-        <img
-          src="../images/middle-eastern-food-6615971_1280.jpg"
-          alt=""
-          class="rounded w-100"
-        />
-        <p class="titre-image">Titre</p>
-        <div class="action-image-buttons">
-          <button
-            class="btn btn-outline-light"
-            data-bs-toggle="modal"
-            data-bs-target="#EditionPhotoModal"
-            data-show="admin"
-          >
-            <i class="bi bi-pencil-square"></i>
-          </button>
-          <button class="btn btn-outline-light" data-bs-toggle="modal"
-          data-bs-target="#DeletePhotoModal" data-show="admin">
-            <i class="bi bi-trash"></i>
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="col p-3">
-      <div class="image-card text-white">
-        <img
-          src="../images/middle-eastern-food-6615971_1280.jpg"
-          alt=""
-          class="rounded w-100"
-        />
-        <p class="titre-image">Titre</p>
-        <div class="action-image-buttons">
-          <button
-            class="btn btn-outline-light"
-            data-bs-toggle="modal"
-            data-bs-target="#EditionPhotoModal"
-            data-show="admin"
-          >
-            <i class="bi bi-pencil-square"></i>
-          </button>
-          <button class="btn btn-outline-light" data-bs-toggle="modal"
-          data-bs-target="#DeletePhotoModal" data-show="admin">
-            <i class="bi bi-trash"></i>
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="col p-3">
-      <div class="image-card text-white">
-        <img
-          src="../images/middle-eastern-food-6615971_1280.jpg"
-          alt=""
-          class="rounded w-100"
-        />
-        <p class="titre-image">Titre</p>
-        <div class="action-image-buttons">
-          <button
-            class="btn btn-outline-light"
-            data-bs-toggle="modal"
-            data-bs-target="#EditionPhotoModal"
-            data-show="admin"
-          >
-            <i class="bi bi-pencil-square"></i>
-          </button>
-          <button class="btn btn-outline-light" data-bs-toggle="modal"
-          data-bs-target="#DeletePhotoModal" data-show="admin">
-            <i class="bi bi-trash"></i>
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="col p-3">
-      <div class="image-card text-white">
-        <img
-          src="../images/middle-eastern-food-6615971_1280.jpg"
-          alt=""
-          class="rounded w-100"
-        />
-        <p class="titre-image">Titre</p>
-        <div class="action-image-buttons">
-          <button
-            class="btn btn-outline-light"
-            data-bs-toggle="modal"
-            data-bs-target="#EditionPhotoModal"
-            data-show="admin"
-          >
-            <i class="bi bi-pencil-square"></i>
-          </button>
-          <button class="btn btn-outline-light" data-bs-toggle="modal"
-          data-bs-target="#DeletePhotoModal" data-show="admin">
-            <i class="bi bi-trash"></i>
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="col p-3">
-      <div class="image-card text-white">
-        <img
-          src="../images/middle-eastern-food-6615971_1280.jpg"
-          alt=""
-          class="rounded w-100"
-        />
-        <p class="titre-image">Titre</p>
-        <div class="action-image-buttons">
-          <button
-            class="btn btn-outline-light"
-            data-bs-toggle="modal"
-            data-bs-target="#EditionPhotoModal"
-            data-show="admin"
-          >
-            <i class="bi bi-pencil-square"></i>
-          </button>
-          <button class="btn btn-outline-light" data-bs-toggle="modal"
-          data-bs-target="#DeletePhotoModal" data-show="admin">
-            <i class="bi bi-trash"></i>
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="col p-3">
-      <div class="image-card text-white">
-        <img
-          src="../images/middle-eastern-food-6615971_1280.jpg"
-          alt=""
-          class="rounded w-100"
-        />
-        <p class="titre-image">Titre</p>
-        <div class="action-image-buttons">
-          <button
-            class="btn btn-outline-light"
-            data-bs-toggle="modal"
-            data-bs-target="#EditionPhotoModal"
-            data-show="admin"
-          >
-            <i class="bi bi-pencil-square"></i>
-          </button>
-          <button class="btn btn-outline-light" data-bs-toggle="modal"
-          data-bs-target="#DeletePhotoModal" data-show="admin">
-            <i class="bi bi-trash"></i>
-          </button>
-        </div>
-      </div>
-    </div>
+  <div class="row row-cols-2 row-cols-lg-3" id="allImages">
+    
+      
   </div>
   <div class="text-center">
     <a href="#" class="btn btn-primary">Résever</a>
@@ -188,26 +46,29 @@
         ></button>
       </div>
       <div class="modal-body">
-        <form>
+        <form id="formulaireEditionPhoto">
           <div class="mb-3">
             <label for="NamePhotoInput" class="form-label text-primary"
               >Titre de la photo</label
             >
             <input
-              type="email"
+              type="text"
               class="form-control"
               id="NamePhotoInput"
               placeholder="Lazagnes à la viande"
+              name="Titre"
             />
+            <div class="invalid-feedback">Le titre est requis</div>
           </div>
           <div class="mb-3">
             <label for="ImageInput" class="form-label text-primary"
               >Image</label
             >
-            <input type="file" class="form-control" id="ImageInput" />
+            <input type="file" class="form-control" id="ImageInputGallery" name="ImgGalerie" />
+            <div class="invalid-feedback">L'image est requise</div>
           </div>
           <div class="text-center">
-            <button type="button" class="btn btn-primary">Enregistrer</button>
+            <button type="button" class="btn btn-primary" id="EditionPhotoModal">Enregistrer</button>
           </div>
         </form>
       </div>
