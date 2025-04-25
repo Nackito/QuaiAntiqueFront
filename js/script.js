@@ -9,13 +9,6 @@ function getRole() {
   return getCookie(roleCookieName);
 }
 
-// Fonction contre les injections XSS
-function sanitizeHtml(html) {
-  const tempHtml = document.createElement("div");
-  tempHtml.textContent = html;
-  return tempHtml.innerHTML;
-}
-
 function signout() {
   // Effacer le cookie
   eraseCookie(tokenCookieName);
@@ -102,4 +95,39 @@ function showAndHideElementForRoles() {
         break;
     }
   });
+}
+
+// Fonction contre les injections XSS
+function sanitizeHtml(html) {
+  const tempHtml = document.createElement("div");
+  tempHtml.textContent = html;
+  return tempHtml.innerHTML;
+}
+
+function getInfosUser() {
+  let myHeaders = new Headers();
+  myHeaders.append("X-AUTH-TOKEN", getToken());
+  let requestOptions = {
+    method: "GET",
+    headers: myHeaders,
+    redirect: "follow",
+  };
+
+  fetch(apiUrl + "account/me", requestOptions)
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        console.log(
+          "Erreur lors de la récupération des informations utilisateur."
+        );
+      }
+    })
+    .then((result) => {
+      return result;
+      /*setToken(result.access_token);
+      setCookie(roleCookieName, result.role, 7); // 7 days expiration
+      showAndHideElementForRoles();*/
+    })
+    .catch((error) => console.log("error", error));
 }
