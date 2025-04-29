@@ -4,6 +4,7 @@ const galerieImages = document.getElementById("allImages");
 let monImage = getImage("titre", "./images/pancakes-2291908_1280.jpg");
 
 galerieImages.innerHTML = monImage;
+showAndHideElementForRoles();
 
 function getImage(titre, urlImage) {
   titre = sanitizeHtml(titre);
@@ -21,12 +22,12 @@ function getImage(titre, urlImage) {
             class="btn btn-outline-light"
             data-bs-toggle="modal"
             data-bs-target="#EditionPhotoModal"
-            data-show="admin"
+            data-show="connected"
           >
             <i class="bi bi-pencil-square"></i>
           </button>
           <button class="btn btn-outline-light" data-bs-toggle="modal"
-          data-bs-target="#DeletePhotoModal" data-show="admin">
+          data-bs-target="#DeletePhotoModal" data-show="connected">
             <i class="bi bi-trash"></i>
           </button>
         </div>

@@ -45,7 +45,7 @@ function checkCredentials() {
     .then((result) => {
       const token = result.apiToken;
       setToken(token);
-      setCookie("role", result.roles[0], 7); // 7 days expiration
+      setCookie(roleCookieName, "connected", 7); // 7 days expiration
       window.location.replace("/");
     })
     .catch((error) => console.error(error));

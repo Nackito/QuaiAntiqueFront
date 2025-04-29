@@ -3,6 +3,11 @@ const roleCookieName = "role";
 const btnDeconnexion = document.getElementById("signout-btn");
 const apiUrl = "http://127.0.0.1:8000/api/";
 
+console.log("Token:", getToken());
+console.log("Is connected:", isConnected());
+console.log("User connected:", isConnected());
+console.log("Role:", getRole());
+
 btnDeconnexion.addEventListener("click", signout);
 
 function getRole() {
@@ -50,12 +55,15 @@ function eraseCookie(name) {
   document.cookie = name + "=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
 }
 
-function isConnected() {
+/*function isConnected() {
   if (getToken() == null || getToken == undefined) {
     return false;
   } else {
     return true;
   }
+}*/
+function isConnected() {
+  return getToken() != null; // Vérifie si le token existe
 }
 
 /*

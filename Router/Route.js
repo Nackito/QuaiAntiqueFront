@@ -15,3 +15,6 @@ export default class Route {
 ["client"] -> Seulement les clients
 ["admin", "client"] -> Seulement les admins et les clients
  */
+
+// Exemple d'utilisation :
+// const route = new Route("/home", "Home", "/pages/home.html", ["admin"]);

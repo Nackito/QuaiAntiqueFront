@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import url("/node_modules/bootstrap-icons/font/bootstrap-icons.css");
+@import url("https://fonts.googleapis.com/css2?family=MonteCarlo&display=swap");
 /*!
  * Bootstrap  v5.3.5 (https://getbootstrap.com/)
  * Copyright 2011-2025 The Bootstrap Authors
@@ -12092,4 +12093,31 @@ p {
   100% {
     transform: rotate(360deg);
   }
+}
+/* Page de menu */
+.line {
+  height: 1px;
+  background-color: white;
+  width: 200px;
+}
+
+.montecarlo {
+  font-family: "MonteCarlo", cursive;
+}
+
+.Title-menu {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 21px;
+}
+
+.Title-dish {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+.Detail-dish {
+  font-family: "Hind Madurai", serif;
+  font-size: 12px;
 }/*# sourceMappingURL=main.css.map */

@@ -22,31 +22,32 @@ export const allRoutes = [
     "/account",
     "Mon compte",
     "/pages/auth/account.html",
-    ["client", "admin"],
+    ["connected"],
     "js/account.js"
   ),
   new Route(
     "/editPassword",
     "Modifier le mot de passe",
     "/pages/auth/editPassword.html",
-    ["client", "admin"]
+    ["connected"]
   ),
   new Route(
     "/allReservations",
     "Vos réservations",
     "/pages/reservations/allResa.html",
-    ["client"]
+    ["connected"]
   ),
   new Route("/reserver", "Réserver", "/pages/reservations/reserver.html", [
-    "client",
+    "connected",
   ]),
   new Route(
     "/detailsResa",
     "Détails réservation",
     "/pages/reservations/detailsResa.html",
-    ["client"],
+    ["connected"],
     "js/reservations/detailsResa.js"
   ),
+  new Route("/menu", "Menu", "/pages/menu.html", []),
 ];
 
 // Le titre s'affiche comme ceci : Route.title - websiteName
