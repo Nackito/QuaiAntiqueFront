@@ -22,7 +22,7 @@ export const allRoutes = [
     "/account",
     "Mon compte",
     "/pages/auth/account.html",
-    ["connected"],
+    [],
     "js/account.js"
   ),
   new Route(
@@ -35,7 +35,7 @@ export const allRoutes = [
     "/allReservations",
     "Vos réservations",
     "/pages/reservations/allResa.html",
-    ["connected"]
+    []
   ),
   new Route("/reserver", "Réserver", "/pages/reservations/reserver.html", [
     "connected",
