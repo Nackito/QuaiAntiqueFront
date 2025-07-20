@@ -12074,6 +12074,7 @@ p {
   justify-content: center;
   align-items: center;
   z-index: 9999;
+  min-height: 100vh;
 }
 
 /* Spinner animation */
@@ -12102,7 +12103,8 @@ p {
 }
 
 .montecarlo {
-  font-family: "MonteCarlo", cursive;
+  font-family: "MonteCarlo", sans-serif;
+  font-display: swap;
 }
 
 .Title-menu {

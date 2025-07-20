@@ -133,9 +133,6 @@ function getInfosUser() {
     })
     .then((result) => {
       return result;
-      /*setToken(result.access_token);
-      setCookie(roleCookieName, result.role, 7); // 7 days expiration
-      showAndHideElementForRoles();*/
     })
     .catch((error) => console.log("error", error));
 }
